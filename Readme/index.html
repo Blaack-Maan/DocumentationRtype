@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/TechnicalDoc/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/Readme/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Server&Client - R-Type-Documentation</title>
+    <title>Readme - R-Type-Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Server\u0026Client";
-        var mkdocs_page_input_path = "TechnicalDoc.md";
-        var mkdocs_page_url = "/TechnicalDoc/";
+        var mkdocs_page_name = "Readme";
+        var mkdocs_page_input_path = "Readme.md";
+        var mkdocs_page_url = "/Readme/";
       </script>
     
     <!--[if lt IE 9]>
@@ -63,22 +63,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../Classes/">Classes</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Server&Client</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#about-the-server">  About the Server. 🌐 </a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#how-did-we-design-our-server">  How did we design our Server ? 💡 </a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#what-are-the-elements-that-characterize-our-server">  What are the elements that characterize our server ? 📑 </a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#what-does-our-server-need-to-function">  What does our server need to function ? 🧰  </a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#server-integration-with-ecs">  Server integration with ECS.🧩  </a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#about-the-client">  About the Client 🤝🌐 . </a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../TechnicalDoc/">Server&Client</a>
                 </li>
               </ul>
               <ul>
@@ -111,7 +97,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Server&Client</li>
+      <li class="breadcrumb-item active">Readme</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -120,49 +106,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="_1"></h1>
-<p>We all know that the R-type product has a server and a client implemented in C++. But each of the two has essential criteria.</p>
-<h2 id="about-the-server"><ins> <u> About the Server. 🌐</u> </ins></h2>
-<p>As for the server, it implements all the logic of the game. Additionally the server must:</p>
+                <p><img alt="R-type" src="../rtype.jpg" /></p>
+<h1 id="description-of-project">Description of Project</h1>
+<p>R-type is a video game developed in C++. It’s a shoot’em up type shooter supporting 1 to 4 players on a network. The project was completed over 7 weeks. The first 4 weeks consisted of developing a prototype gameplay of the game. The last 3 weeks consisted of choosing a track and completing it. Among the tracks we had, we had the Game Engine track, the NetWork Advanced track, the Game Design track. The project being a product, it had to have solid documentation in order to allow people wishing to work on it to better find their way into the code.
+Solid software engineering practices, such as the use of CMake, autonomous dependency management and cross-platform portability, are required.</p>
+<h1 id="platforms-supported-by-the-project">Platforms supported by the project</h1>
+<p>The project requires the game to be cross-platform. Ideally the game would compile and run perfectly on a Linux system, on Window and on MacOs. but currently the systems on which our project runs are Linux and Windows.</p>
+<h2 id="installation">Installation</h2>
+<pre><code>$ ./build.sh
+</code></pre>
+<h2 id="build">Build</h2>
+<p>For a smooth running of the gameplay of the game and in order to avoid having technical problems, certain prerequisites are mandatory and essential.</p>
 <ul>
-<li>
-<p>notify each client when a monster appears, moves, is destroyed, shoots, kills a player, and so on..., as well as the actions of other clients (a player moves, shoots, etc.)</p>
-</li>
-<li>
-<p>be multithreaded, or at least MUST NOT block or wait for messages from clients, because the game must run frame by frame on the server.</p>
-</li>
-<li>
-<p>manage game logic such that the game should run frame by frame on the server, regardless of client actions!</p>
-</li>
-<li>
-<p>manage the handling of clients that go down (that have trouble communicating with the server). For whatever reason, the server MUST continue to run and MUST inform other clients in the same game that a client is failing. is planted.</p>
-</li>
-<li>
-<p>must be robust and capable of performing whatever problem may arise.</p>
-</li>
+<li>You need to install <code>Visual Studio</code>.</li>
+<li>You need to install the <code>Visual Studio</code> build tools.</li>
+<li>You need to install <code>C++</code> and <code>Cmake</code> dependencies in <code>Visual Studio</code>.</li>
+<li>You need to install <code>Conan</code> which is a C++ package manager.</li>
 </ul>
-<h2 id="how-did-we-design-our-server"><ins> <u> How did we design our Server ? 💡</u> <ins></h2>
-<h2 id="what-are-the-elements-that-characterize-our-server"><ins> <u> What are the elements that characterize our server ? 📑</u> </ins></h2>
-<h2 id="what-does-our-server-need-to-function"><ins> <u> What does our server need to function ? 🧰 </u> </ins></h2>
-<h2 id="server-integration-with-ecs"><ins> <u> Server integration with ECS.🧩 </u> </ins></h2>
-<h2 id="about-the-client"><ins> <u> About the Client 🤝🌐 </u>. </ins></h2>
-<p><span style="background-color: orange;"> The client represents the graphical display of the game.</span></p>
-<p>Indeed, the client does not implement the game logic. The server already assumes this responsibility. </p>
-<p>The client CAN nevertheless execute parts of the game's logic code, such as the movements of the local player or missile movements, but in all cases the server MUST have authority over what ultimately happens. The customer also has certain essential rules. The client must contain everything necessary to display the game.</p>
-<p>At the customer level we must be able to observe elements such as:
--the player
--monsters
--monsters that fire missiles.
--missiles from monsters and the player.
--a background against which the confrontation takes place.
--obstacles to avoid</p>
+<h2 id="compilation-using-cmake">Compilation using cmake</h2>
+<ul>
+<li>First of all, you need to create a directory named build using 'mkdir dirname'</li>
+<li>Second of all, you need to go to the directory using 'cd build'</li>
+</ul>
+<h3 id="reqirements">Reqirements</h3>
+<p>In order to ensure a favorable evaluation for the defense and to maximize the allocation of the six credits to the project, it is imperative to meet certain prerequisites. Among these conditions, we find:</p>
+<ul>
+<li><code>The development of a product, as opposed to the execution of a project</code>.</li>
+<li><code>Compilation management with CMake</code>.</li>
+<li><code>Management of third-party dependencies</code>.</li>
+<li><code>Cross-Platform Management: The project must be able to compile on both Linux and Windows</code>.</li>
+<li><code>Version control flow management, which includes having proper Git practices and automated Continuous Integration (CI)</code>.</li>
+<li><code>Dependency packagings</code>. </li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>Once the compilation is complete, you launch the server binary and the client binary. You will be presented with a client-level interface. On this interface you will have to enter your nickname, your IP address, the port, the room that you would like to integrate. In addition, information such as choosing your space shuttle is also available on the interface.</p>
+<h2 id="contributing">Contributing</h2>
+<p>If you wish to contribute to the project, you must already contact the project contributors. You can write to them via their emails. Then you need to read the documentation and information about the project. Once these two elements are established, you can start coding.</p>
+<h2 id="collaborators-autors">Collaborators / Autors</h2>
+<ul>
+<li>AGBADOGBE-KAKPO Imhotep[agbadogbe.kakpo@epitech.eu]</li>
+<li>BAMENOU Jean-David[jean-david.bamenou@epitech.eu]</li>
+<li>KOUKPONOU Kades[kades.koukponou@epitech.eu]</li>
+<li>GBENOU Nicaise[nicaise.gbenou@epitech.eu]</li>
+<li>TOGNI-AKPO Caleb[togni.akpo@epitech.eu]</li>
+<li>BINAZON Wilfrid[wilfrid.binazon@epitech.eu]</li>
+</ul>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Classes/" class="btn btn-neutral float-left" title="Classes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../RFC/" class="btn btn-neutral float-right" title="RFC">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -184,10 +175,6 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Classes/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../RFC/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

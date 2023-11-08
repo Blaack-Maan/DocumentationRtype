@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/GameEngine/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>GameEngine - R-Type-Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "GameEngine";
+        var mkdocs_page_input_path = "GameEngine.md";
+        var mkdocs_page_url = "/GameEngine/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> R-Type-Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Getting_start/">Getting Started</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Engine/">ECS</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">GameEngine</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-a-video-game-engine">  What is a video game engine? 🎯  </a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-do-video-game-engines-work">  How do video game engines work? 👥💻   </a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-are-the-functionalities-of-a-video-game-engine">  What are the functionalities of a video game engine? 📌  </a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-the-name-chaos">  Why the name CHAOS? 👾  </a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-are-the-features-of-our-video-game-engine">   What are the features of our video game engine? 🤖  </a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#application-of-object-oriented-principles-in-our-game-engine">  Application of object-oriented principles in our game Engine? 🫧  </a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../GameProperty/">Adding</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Classes/">Classes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../TechnicalDoc/">Server&Client</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../RFC/">RFC</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../License/">License</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Contributor/">Contributor</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../FAQ/">FAQ</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">R-Type-Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">GameEngine</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1"></h1>
+<h2 id="what-is-a-video-game-engine"><ins> <u> What is a video game engine? 🎯 </u> </ins></h2>
+<p>The notion of game engine appeared in the 1990s, in reference to software used in first-person shooter games such as Doom. Doom's architecture made a clear distinction between the game's engine components and Doom's own digital assets such as graphics, sounds, music, scenes and rules that reproduce the atmosphere of the game.</p>
+<p>A game engine is a set of software components that perform geometry and physics calculations used in video games. The whole forms a flexible real-time simulator which reproduces the characteristics of the imaginary worlds in which the games take place. The purpose of a game engine is to allow a development team to focus on the content and flow of the game rather than solving computer problems.
+<center></p>
+<p><img alt="moteur" src="../moteur_diagrame.png" />
+</center></p>
+<p>  <center> <u> Image illustrating in a simple way a game engine. </center> </u> </p>
+
+<p>For several years, the role of game engines has continued to grow. The investment represented by the development of game engines continues to grow and makes it difficult or even impossible to amortize them over a single production.</p>
+<p>Among the game engines most used or noticed in recent years, we will cite (non-exhaustive list): Renderware, the various Unreal engines, Quake engines, Source engines, CryEngine, Unity, Torque Game Engines, Reality engines, Novodex, Antiryad Gx, etc.</p>
+<h2 id="how-do-video-game-engines-work"><ins> <u> How do video game engines work? 👥💻  </u> </ins></h2>
+<p>In a nutshell, game engines work by establishing the framework that makes it easier for a user to create something (like a video game or digital twin) than if they had to create it from scratch. The framework provided varies from engine to engine, but game engines generally include a 2D or 3D rendering engine.</p>
+<p>Game engine software was originally created by game developers with the goal of developing new games faster and easier. But now, these powerful rendering tools have given other industries the ability to visualize data, products and processes in new ways and develop creative ways to collaborate and innovate.</p>
+<h2 id="what-are-the-functionalities-of-a-video-game-engine"><ins> <u> What are the functionalities of a video game engine? 📌 </u> </ins></h2>
+<p>Each game engine is unique. However, certain functionalities are found.</p>
+<p>We have modules such as:</p>
+<ul>
+<li><code>The Mathematics module</code></li>
+</ul>
+<p><img alt="Maths" src="../Math.jpeg" /></p>
+<p>The math engine handles all linear algebra operations and geometric operations. Vectors and matrices allow a character to move and rotate, respectively.</p>
+<ul>
+<li><code>The Physics module</code></li>
+</ul>
+<p><img alt="Physique" src="../physics.jpeg" /></p>
+<p>The interesting part of a game engine is the physics engine. This module is essential and a good game engine should integrate this module. It helps you create and emulate all the game physics. For example if you want to bounce a ball, you can easily add gravity, mass to the ball and a bounce effect in most cases without any lines of written code!</p>
+<p>But it is also the most complicated. The physics engine determines the position and speed of an entity. To do this, it integrates the external forces acting on the entity.</p>
+<ul>
+<li><code>The Audio module</code></li>
+</ul>
+<p>The sound is part of the gameplay and must lead the player, give him clues. Among other things, it must increase the feeling of immersion.</p>
+<p>The Audio module in a video game engine is a set of code executable in a computer program which allows you to manage the audio part of the program.</p>
+<ul>
+<li>
+<p><code>The Scripting module</code></p>
+</li>
+<li>
+<p><code>The AI (Artificial Intelligence) module</code></p>
+</li>
+</ul>
+<h2 id="why-the-name-chaos"><ins> <u> Why the name CHAOS? 👾 </u> </ins></h2>
+<p>This is because it uses the ECS and it uses the pearl melle stuff. CHAOS it alludes more to something chaotic.</p>
+<h2 id="what-are-the-features-of-our-video-game-engine"><ins>  <u> What are the features of our video game engine? 🤖 </u> </ins></h2>
+<p>Since a game engine has some basic features such as physics and mathematics, our game engine contains the following features:</p>
+<ul>
+<li><code>A Physics module</code></li>
+</ul>
+<p>The physics module alone manages the movement of entities based on kinematic calculations and collision management.</p>
+<ul>
+<li><code>A Resource Manager module</code></li>
+</ul>
+<p>This module is responsible for destroying textures once they are created and finished being used.</p>
+<ul>
+<li><code>A GUI (Graphical User Interface) module</code></li>
+</ul>
+<p>This module is responsible for the interaction between the screen and the player. Thanks to this module, the player has access to the different functions of the game. The GUI module at our level encapsulates the Raylib library which is the library that we use for the development of our game.</p>
+<h2 id="application-of-object-oriented-principles-in-our-game-engine"><ins> <u> Application of object-oriented principles in our game Engine? 🫧 </u> </ins></h2>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Engine/" class="btn btn-neutral float-left" title="ECS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../GameProperty/" class="btn btn-neutral float-right" title="Adding">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Engine/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../GameProperty/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

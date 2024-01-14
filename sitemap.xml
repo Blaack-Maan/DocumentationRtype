@@ -2,67 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://example.com/</loc>
-         <lastmod>2023-11-08</lastmod>
+         <lastmod>2024-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/Classes/</loc>
-         <lastmod>2023-11-08</lastmod>
+         <loc>https://example.com/Api/</loc>
+         <lastmod>2024-01-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/Architecture/</loc>
+         <lastmod>2024-01-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/Client/</loc>
+         <lastmod>2024-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/Contributor/</loc>
-         <lastmod>2023-11-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/Engine/</loc>
-         <lastmod>2023-11-08</lastmod>
+         <lastmod>2024-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/FAQ/</loc>
-         <lastmod>2023-11-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/GameEngine/</loc>
-         <lastmod>2023-11-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/GameProperty/</loc>
-         <lastmod>2023-11-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/Getting_start/</loc>
-         <lastmod>2023-11-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/Installation/</loc>
-         <lastmod>2023-11-08</lastmod>
+         <lastmod>2024-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/License/</loc>
-         <lastmod>2023-11-08</lastmod>
+         <lastmod>2024-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/RFC/</loc>
-         <lastmod>2023-11-08</lastmod>
+         <loc>https://example.com/Server/</loc>
+         <lastmod>2024-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/Readme/</loc>
-         <lastmod>2023-11-08</lastmod>
+         <loc>https://example.com/Services_actions_reactions/</loc>
+         <lastmod>2024-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/TechnicalDoc/</loc>
-         <lastmod>2023-11-08</lastmod>
+         <loc>https://example.com/getting_started/</loc>
+         <lastmod>2024-01-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/how_to_build/</loc>
+         <lastmod>2024-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

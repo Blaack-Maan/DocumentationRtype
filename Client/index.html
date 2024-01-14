@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/FAQ/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/Client/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>FAQ - AREA DOCUMENTATION 💡</title>
+    <title>Client - AREA DOCUMENTATION 💡</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "FAQ";
-        var mkdocs_page_input_path = "FAQ.md";
-        var mkdocs_page_url = "/FAQ/";
+        var mkdocs_page_name = "Client";
+        var mkdocs_page_input_path = "Client.md";
+        var mkdocs_page_url = "/Client/";
       </script>
     
     <!--[if lt IE 9]>
@@ -55,8 +55,14 @@
                 <li class="toctree-l1"><a class="reference internal" href="../Server/">Server</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../Client/">Client</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Client</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#comment-les-services-sont-integres-du-cote-du-frontend">Comment les services sont integres du cote du Frontend</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#area-creation-process"> AREA Creation Process </a>
+    </li>
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -75,10 +81,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../Contributor/">Contributor</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">FAQ</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../FAQ/">FAQ</a>
                 </li>
               </ul>
       </div>
@@ -95,7 +99,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">FAQ</li>
+      <li class="breadcrumb-item active">Client</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -105,11 +109,86 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="_1"></h1>
+<p>Pour voir la liste des services disponibles au niveau du projet veiller consulter la section Service/Action/Reactions.</p>
+<h2 id="comment-les-services-sont-integres-du-cote-du-frontend">Comment les services sont integres du cote du Frontend</h2>
+<p>Dans notre app l’intégration des services se faire essentiellement par les méthodes POST et GET . En effet une fois la route vers le service disponible nous communiquons avec l’api en envoyant des requêtes POST pour envoyer des informations(un exemple, les informations de connexion des utilisateurs) et GET pour récupérer des informations ( les actions et réactions relatives à un service par exemple). 
+L’exemple ci dessous met en lumière la communication avec l’api à travers la méthode POST. </p>
+<pre><code>const handleSubmit = async(event) =&gt; {
+        event.preventDefault(); 
+        try {
+            const url = "https://inspired-strictly-starling.ngrok-free.app/api/v1/login";
+            const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
+            });
+            console.log(formData)
+            if    (response.ok) {
+                const data = response.json();
+                window.location.href='/userhome';
+            }
+            else {
+                const lol = response.json();
+            } 
+        } catch (error) {
+            console.error("Erreur d'envoi des données", error);
+        }
+}
+</code></pre>
+<p>Nous récupérons ainsi les informations d’authentification de l’utilisateur ayant un compte existant que nous transmettons à l’api </p>
+<h2 id="area-creation-process"><u> AREA Creation Process </u></h2>
+<p>Well before the user can create an AREA, they must authenticate, therefore register on the platform.
+Creating an AREA is done by following several steps. We can cite in this case:</p>
+<ul>
+<li>Choose area name</li>
+<li>create action </li>
+<li>
+<p>see services that have actions list :</p>
+<pre><code>(GET /api/v1/service/list)
+</code></pre>
+</li>
+<li>
+<p>check if connected to service selected </p>
+<pre><code>(GET /api/v1/service/status/:name)
+</code></pre>
+</li>
+<li>
+<p>if connected display that user is connected else, ask user to connect</p>
+</li>
+<li>
+<p>if user try to connect to service, use : </p>
+<pre><code>GET /api/v1/service/connect/:name that will
+</code></pre>
+<p>send you a redirection link that user will use to connectto service</p>
+</li>
+<li>
+<p>after user end his connection, service send token that are stored on server session</p>
+</li>
+<li>
+<p>after connected user can choose action on this service (you can list actions with) </p>
+<pre><code>(/api/v1/service/info/service_name)
+</code></pre>
+</li>
+<li>
+<p>after ask information corresponding to informations return the server about actions</p>
+</li>
+<li>Do same about reactions</li>
+<li>After everithing have chosend send this request:<br><pre><code>POST /api/v1/area/create:
+</code></pre>
+</li>
+</ul>
+<p><code>params</code>:</p>
+<ul>
+<li>name: area name enter by user</li>
+<li>action: action name, params_name: value</li>
+<li>reactions: reaction name, reaction_name: value</li>
+</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Contributor/" class="btn btn-neutral float-left" title="Contributor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Server/" class="btn btn-neutral float-left" title="Server"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Services_actions_reactions/" class="btn btn-neutral float-right" title="Services and Actions/Reactions">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -132,8 +211,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Contributor/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Server/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../Services_actions_reactions/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
